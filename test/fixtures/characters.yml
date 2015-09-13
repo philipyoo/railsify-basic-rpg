@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  hp: 1
+  xp: 1
+  level: 1
+  level: 1
+  atk: 1
+  def: 1
+  unassigned: 1
+  user_id: 
+
+two:
+  name: MyString
+  hp: 1
+  xp: 1
+  level: 1
+  level: 1
+  atk: 1
+  def: 1
+  unassigned: 1
+  user_id: 

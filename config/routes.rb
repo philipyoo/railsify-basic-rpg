@@ -2,7 +2,12 @@ Rails.application.routes.draw do
 
   root 'application#home'
 
-  resources :users
+  resources :users do
+    resources :characters
+  end
+
+  resources :characters
+
   resource :session
 
   get '/' => 'application#home'
