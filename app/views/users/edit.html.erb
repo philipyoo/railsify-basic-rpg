@@ -1,0 +1,57 @@
+<h1>Edit Account</h1>
+
+<% if (params[:id]).to_i == session[:current_user_id] %>
+
+  <div class="row">
+    <%= form_for @user, url: user_path(@user), http: { method: '' } do |f| %>
+      <% if @user && @user.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@user.errors.count, "error") %>
+          </h2>
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="row">
+        <div class="input-field col s4">
+          <%= f.text_field :username %>
+          <%= f.label :username %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s4">
+          <%= f.text_field :email %>
+          <%= f.label :email %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s4">
+          <%= f.password_field :password %>
+          <%= f.label :password %>
+        </div>
+      </div>
+
+      <div class="row col">
+        <%= f.submit "Submit", class: "btn" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <p>Delete Account:</p>
+    <div class="input-field col s4">
+      <%= link_to "Delete", user_path(@user), :method => :delete, :confirm => "Delete your account?" %>
+    </div>
+  </div>
+
+
+<% else %>
+  <p>Cannot view this page!</p>
+<% end %>
