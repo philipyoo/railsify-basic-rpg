@@ -1,0 +1,93 @@
+html {
+  padding: 2em;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: 'Iceland';
+  font-size: 150%;
+}
+
+.home-page {
+  font-size: 120%;
+}
+
+.front-logo {
+  font-size: 350%;
+  font-weight: bold;
+  margin: 20px;
+}
+
+a {
+  color: white;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+button.add {
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+}
+
+button.sub {
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+}
+
+#side-navbar {
+  background-color: gray;
+  position: relative;
+  height: 100%;
+  width: 20%;
+}
+
+#other-layout {
+  position: relative;
+}
+
+#wrap-this-thing {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.random-max-width {
+  width: 100%;
+  list-style: none;
+}
+
+.li-max-width {
+  float: left;
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.stage-details {
+  text-align: center;
+}
+
+.form-message {
+  border: 1px gray solid;
+  text-align: center;
+}
+
+img.resize{
+   width:150px;
+   height:150px;
+}
+
+.bordering {
+  border: 1px gray solid;
+}
