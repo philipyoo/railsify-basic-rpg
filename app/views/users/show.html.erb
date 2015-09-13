@@ -1,7 +1,25 @@
 <h1>Profile</h1>
+<!-- Any user can view profile pages of users -->
 
-<% if current_user.id == (params[:id]).to_i %>
+<p id="notice"><%= notice %></p>
+
 <div>
-<p>Hi</p>
+  <p>Profile for: <%= @user.username %></p>
+  <p>Hi</p>
 </div>
+
+<p>List all characters:</p>
+
+<!-- TODO: Put character list here -->
+
+<!-- TODO: Move this up to the navbar -->
+<% if (params[:id]).to_i == session[:current_user_id] %>
+  <div>
+    <a href="/users/<%= session[:current_user_id] %>/character/new">Create Character</a>
+  </div>
+
+
+  <div>
+    <a href="/users/<%= session[:current_user_id] %>/edit">Update Account</a>
+  </div>
 <% end %>

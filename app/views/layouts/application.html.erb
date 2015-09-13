@@ -10,6 +10,9 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
+  <!-- Firebase CDN -->
+  <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
+
   <!-- Google Fonts -->
   <link href='http://fonts.googleapis.com/css?family=Orbitron:400,900|Marcellus+SC|Press+Start+2P|Iceland|VT323' rel='stylesheet' type='text/css'>
 
@@ -21,9 +24,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
 
 </head>
-<body>
-  <%= current_user %>
-
+<header>
+  <!-- Place partial header here? -->
+</header>
+<main>
   <% if current_user %>
     Signed in as <%= current_user.username %> | <%= link_to "Logout", '/logout' %>
   <% else %>
@@ -32,5 +36,9 @@
 
   <%= yield %>
 
-</body>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+</main>
+<footer>
+  <!-- Place partial footer here? -->
+</footer>
 </html>
