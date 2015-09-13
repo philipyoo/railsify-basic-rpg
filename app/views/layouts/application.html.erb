@@ -21,8 +21,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
 
 </head>
-<body>
-  <%= current_user %>
+<header>
+  <!-- Place partial header here? -->
+</header>
+<main>
 
   <% if current_user %>
     Signed in as <%= current_user.username %> | <%= link_to "Logout", '/logout' %>
@@ -32,5 +34,9 @@
 
   <%= yield %>
 
-</body>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+</main>
+<footer>
+  <!-- Place partial footer here? -->
+</footer>
 </html>

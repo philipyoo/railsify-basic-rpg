@@ -1,7 +1,12 @@
 <h1>Profile</h1>
 
+<%= current_user %>
+<%= current_user.id %>
+<%= session[:current_user_id] %>
+
 <% if current_user.id == (params[:id]).to_i %>
 <div>
-<p>Hi</p>
+  <p>Hi</p>
+  <p><%= session[:current_user_id] %></p>
 </div>
 <% end %>
