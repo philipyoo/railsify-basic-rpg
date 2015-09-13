@@ -7,9 +7,14 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:password])
       session[:current_user_id] = user.id
-      redirect_to "/users/#{user.id}"
+
+      redirect_to(user_path(user), notice: 'Logged in successfully.')
+
+      # redirect_to "/users/#{user.id}"
     else
-      redirect_to '/login'
+      flash.now.alert = "Login failed."
+      render action: :new
+      # redirect_to '/login'
     end
   end
 

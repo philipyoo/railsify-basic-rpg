@@ -1,12 +1,9 @@
 <h1>Profile</h1>
+<!-- Any user can view profile pages of users -->
 
-<%= current_user %>
-<%= current_user.id %>
-<%= session[:current_user_id] %>
+<p id="notice"><%= notice %></p>
 
-<% if current_user.id == (params[:id]).to_i %>
 <div>
+  <p>Profile for: <%= @user.username %></p>
   <p>Hi</p>
-  <p><%= session[:current_user_id] %></p>
 </div>
-<% end %>
