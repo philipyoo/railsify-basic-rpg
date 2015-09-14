@@ -10,6 +10,8 @@
 
 <p>List all characters:</p>
 
+<%= session[:current_user_id] %>
+
 <% @user.characters.each do |char| %>
   <li><%= char %>
 <% end %>

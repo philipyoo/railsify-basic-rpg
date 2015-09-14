@@ -3,7 +3,7 @@
 <% if (params[:id]).to_i == session[:current_user_id] %>
 
   <div class="row">
-    <%= form_for @user, url: user_path(@user), http: { method: '' } do |f| %>
+    <%= form_for @user, url: user_path(@user) do |f| %>
       <% if @user && @user.errors.any? %>
         <div id="error_explanation">
           <h2>
