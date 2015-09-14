@@ -1,0 +1,23 @@
+<h1>Edit Character</h1>
+
+<% if (params[:id]).to_i == session[:current_user_id] %>
+
+  <div class="row">
+    <%= form_for [@user, @character] do |f| %>
+
+      <div class="row">
+        <div class="input-field col s4">
+          <%= f.text_field :name %>
+          <%= f.label :name %>
+        </div>
+      </div>
+
+      <div class="row col">
+        <%= f.submit "Submit", class: "btn" %>
+      </div>
+    <% end %>
+  </div>
+
+<% else %>
+  <p>Cannot view this page!</p>
+<% end %>

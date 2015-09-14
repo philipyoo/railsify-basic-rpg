@@ -10,12 +10,16 @@
 
 <p>List all characters:</p>
 
-<!-- TODO: Put character list here -->
+<%= session[:current_user_id] %>
+
+<% @user.characters.each do |char| %>
+  <li><%= char %>
+<% end %>
 
 <!-- TODO: Move this up to the navbar -->
 <% if (params[:id]).to_i == session[:current_user_id] %>
   <div>
-    <a href="/users/<%= session[:current_user_id] %>/character/new">Create Character</a>
+    <a href="/users/<%= session[:current_user_id] %>/characters/new">Create Character</a>
   </div>
 
 

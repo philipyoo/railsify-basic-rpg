@@ -24,8 +24,6 @@ class UsersController < ApplicationController
         session[:current_user_id] = @user.id
 
         format.html { redirect_to @user, notice: 'Successfully Registered.'}
-
-        # redirect_to "/users/#{user[:id]}"
       else
         redirect_to '/signup'
       end
