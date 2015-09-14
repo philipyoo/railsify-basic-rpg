@@ -35,6 +35,7 @@ var CreateCharacter = React.createClass({
       <div>
         <div>Available Points: {this.state.unassigned}</div>
         <p>
+          <div>ATK: {this.state.atk}</div>
           <AtkUp
             unassigned={this.state.unassigned}
             atk={this.state.atk}
@@ -47,6 +48,7 @@ var CreateCharacter = React.createClass({
           />
         </p>
         <p>
+          <div>DEF: {this.state.atk}</div>
           <DefUp
             unassigned={this.state.unassigned}
             def={this.state.def}
@@ -62,7 +64,6 @@ var CreateCharacter = React.createClass({
     );
   }
 });
-
 
 
 var AtkUp = React.createClass({
@@ -96,10 +97,6 @@ var AtkDown = React.createClass({
     );
   }
 });
-
-
-
-
 
 
 var DefUp = React.createClass({
