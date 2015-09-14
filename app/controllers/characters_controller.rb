@@ -10,6 +10,7 @@ class CharactersController < ApplicationController
 
   # GET - Display new character creation form
   def new
+    @user = User.find(params[:user_id])
     @character = Character.new
   end
 
