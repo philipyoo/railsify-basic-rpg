@@ -48,7 +48,7 @@ var CreateCharacter = React.createClass({
           />
         </p>
         <p>
-          <div>DEF: {this.state.atk}</div>
+          <div>DEF: {this.state.def}</div>
           <DefUp
             unassigned={this.state.unassigned}
             def={this.state.def}
