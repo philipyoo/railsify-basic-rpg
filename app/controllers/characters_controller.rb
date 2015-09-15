@@ -1,6 +1,8 @@
 class CharactersController < ApplicationController
   before_filter :authorize
 
+  skip_before_action :verify_authenticity_token
+
   before_action :read_character, only: [:show, :edit, :update, :destroy]
 
   # GET - All Characters
@@ -16,14 +18,23 @@ class CharactersController < ApplicationController
 
   # POST - Create new character
   def create
-    @character = Character.new(character_params)
+    @character = Character.new
+
+    @character.name = params[:name]
+    @character.atk = params[:attack]
+    @character.def = params[:defense]
+    @character.hp = 80
+    @character.xp = 0
+    @character.level = 1
+    @character.unassigned = params[:unassigned]
+    @character.user_id = @current_user.id
+
 
     respond_to do |format|
       if @character.save
-        #Test this out. Might need to replace @current_user
-        format.html { redirect_to user_path(@current_user), notice: 'Successfully Registered.'}
+        format.html { redirect_to user_path(@current_user), notice: 'Successfully Created New Character.'}
       else
-        redirect_to "/users/#{session[current_user_id]}"
+        redirect_to "/users/#{@current_user}"
       end
     end
   end
