@@ -26,21 +26,14 @@ var CreateCharacter = React.createClass({
     this.setState({name: name});
   },
 
-  onSubmit: function(event) {
-    //
-    // Post AJAX? How can I save to db without ajax?
-    event.preventDefault();
-    // $(this.getDOMNode()).serialize();
-
-    // $.ajax({
-    //   data: this.state.character
-    // })
-  },
-
   render: function() {
+    var form_url = "/users/" + this.props.current_user.id + "/characters"
+    // var parseAttack = parseInt(this.state.attack)
+    // var parseDefense = parseInt(this.state.defense)
+
     return (
-      <div>
-        <input></input>
+      <form action={form_url} method="POST">
+        <input name="name"></input>
 
         <div>
           Available Points: {this.state.character.unassigned}
@@ -58,11 +51,13 @@ var CreateCharacter = React.createClass({
           <DefenseDown adjustDefense={this.adjustDefense} />
         </div>
 
-        <form onSubmit={this.onSubmit} className="hidden">
-          <input name="Attack" value={this.state.attack} />
-          <input name="Defense" value={this.state.defense} />
-        </form>
-      </div>
+        <div>
+          <input name="attack" value={this.state.character.attack} className="hidden" />
+          <input name="defense" value={this.state.character.defense} className="hidden" />
+          <input name="unassigned" value={this.state.character.unassigned} className="hidden" />
+          <input className="btn" type="submit" name="action" value="Create" />
+        </div>
+      </form>
     );
   }
 });
@@ -75,7 +70,7 @@ var AttackUp = React.createClass({
 
   render: function() {
     return (
-      <button onClick={this._handleClick}>UP</button>
+      <button type="button" onClick={this._handleClick}>UP</button>
     );
   }
 });
@@ -87,7 +82,7 @@ var AttackDown = React.createClass({
 
   render: function() {
     return (
-      <button onClick={this._handleClick}>DOWN</button>
+      <button type="button" onClick={this._handleClick}>DOWN</button>
     );
   }
 });
@@ -100,7 +95,7 @@ var DefenseUp = React.createClass({
 
   render: function() {
     return (
-      <button onClick={this._handleClick}>UP</button>
+      <button type="button" onClick={this._handleClick}>UP</button>
     );
   }
 });
@@ -112,7 +107,7 @@ var DefenseDown = React.createClass({
 
   render: function() {
     return (
-      <button onClick={this._handleClick}>DOWN</button>
+      <button type="button" onClick={this._handleClick}>DOWN</button>
     );
   }
 });
